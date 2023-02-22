@@ -1,6 +1,6 @@
 # Proiect_DAW
 
-Proiect Dezvoltare Aplicati Web - Anul 4 Semestrul 1
+Proiect Dezvoltarea aplicatiilor Web - Anul 4 Semestrul 1
 
 In aceste proiect am dezvoltat un site tip Wikipedia folosind C# si ASP.NET.
 Functii site:

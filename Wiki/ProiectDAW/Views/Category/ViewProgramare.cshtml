@@ -1,0 +1,21 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model ProiectDAW.Models.Article[]
+
+<div class="text-center text-muted p-1 mb-2 bg-dark text-white">
+    <h1 class="display-4 text-white">Wiki</h1>
+    <h4 class="text-white">Lista articole din Categoria Programare</h4>
+</div>
+
+@foreach (Article article in @Model.Reverse().Where(x => x.Category.Name == "Programare"))
+{
+    <div class="article text-muted p-1 mb-2 bg-dark text-white">
+        <h1><a class="text-decoration-none" asp-action="ShowViewArticle" asp-route-Id="@article.Id">@article.Title</a></h1>
+        <p class="text-white text-decoration-none">Adaugat de @article.Author la data de @article.Date in @article.Category.Name</p>
+        <p><a class="text-decoration-none" asp-action="ShowEditArticle" asp-route-Id="@article.Id">Editeaza</a></p>
+    </div>
+}

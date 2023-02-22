@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model ProiectDAW.Models.Article
+
+<div>
+    <h1 class="text-white">Editeaza articolul</h1>
+
+    <form method="post" asp-action="EditArticle">
+        <input asp-for="@Model.Id" type="hidden" /> <br />
+        <label class="text-white">Titlu: </label>
+        <input class="text-light bg-dark" asp-for="@Model.Title" style="width: 30.6%;" /> <br />
+        <label class="text-white">Autor: </label>
+        <input class="text-light bg-dark" asp-for="@Model.Author" style="width: 30%;"/> <br />
+        <p>
+            <label class="text-white">Text: </label>
+        <br />
+            <textarea class="text-light bg-dark" asp-for="@Model.Body" style="height: 100px; width: 70%;"> </textarea>
+        </p>
+        <label class="text-white">Categorie: </label>
+        <select asp-for="@Model.CategoryId" asp-items="@ViewBag.category">
+        </select> <br />
+
+        <input type="submit" value="Submit" /> <a>&emsp;</a>
+        <a class="text-decoration-none" onclick="return confirm('Esti sigur ca vrei sa stergi articolul?')" asp-action="DeleteArticle" asp-route-Id="@Model.Id">Sterge</a>
+    </form>
+</div>
